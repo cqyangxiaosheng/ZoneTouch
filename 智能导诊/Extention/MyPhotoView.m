@@ -60,7 +60,7 @@
 
 - (void)setBoundlePath:(NSString *)plistName
 {
-//    _plistName = plistName;
+    //    _plistName = plistName;
     NSString *path = [[NSBundle mainBundle] pathForResource:plistName ofType:@"plist"];
     NSDictionary *data = [NSDictionary dictionaryWithContentsOfFile:path];
     
@@ -108,9 +108,8 @@
         }
     }
     
-    NSLog(@"%@",string);
-        if (self.touchEventBlock) {
-            self.touchEventBlock(string);
-        }
+    if (self.touchEventBlock) {
+        self.touchEventBlock(string);
+    }
 }
 @end
