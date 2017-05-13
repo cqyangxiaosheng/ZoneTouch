@@ -30,6 +30,8 @@
         _screenWidthScale = frame.size.width/image.size.width;
         _screenHeightScale = frame.size.height/image.size.height;
         
+        NSLog(@"screen width:%f height:%f",[UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+        
         _pathRefDic = [[NSMutableDictionary alloc] init];
     }
     
@@ -92,6 +94,8 @@
     CGPoint touchLocation = [touch locationInView:self.containerView];
     
     touchLocation = CGPointMake(touchLocation.x/self.screenWidthScale, touchLocation.y/self.screenHeightScale);
+    
+    NSLog(@"widthScale:%f heightScale:%f",self.screenWidthScale, self.screenHeightScale);
     
     NSString *string = @"你摸到哪里去了";
     NSArray *keys = [_pathRefDic allKeys];
